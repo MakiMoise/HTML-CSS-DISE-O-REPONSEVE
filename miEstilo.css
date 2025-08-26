@@ -1,37 +1,46 @@
 @charset 'UTF-8';
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     font-size: 15px;
     line-height: 1.5;
-    font-weight: normal;
-    font-family: "Lexend Deca";
+    font-weight: 400;
+    font-family: "Smythe", system-ui;
 }
+
 .Body {
     max-width: 1400px;
-    margin-inline:auto ;
+    margin-inline: auto;
     height: 100dvh;
 }
-.Header{}
-.Aside{}
 
-.Main{
+.Header {}
+
+.Aside {}
+
+/* Comienzo main */
+.Main {
     height: 70%;
-    & .Section{
+    display: flex;
+    justify-content: center;
+
+    & .section {
         display: flex;
+        width: 300px;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
-        gap:0;
+        gap: 0;
 
-        & card{
+        & .card {
             min-width: 250px;
             max-width: 375px;
+            height: 400px;
             padding: 2rem;
 
             display: flex;
@@ -39,43 +48,117 @@ html{
             flex-wrap: nowrap;
             align-items: flex-start;
             justify-content: space-evenly;
-            gap:2rem;
+            gap: 2rem;
 
             color: white;
 
-            & card_title{
-
+            & .card_title {
+                font-family: "Smythe", system-ui;
+                font-weight: 900;
+                font-size: 2rem;
             }
-            & .card_paragraph{
 
+            & .card_paragraph {
+                font-family: "Farsan";
             }
-            & .card_cta{
+
+            & .card_cta {
                 padding: 1rem 2rem;
+                border: 1px solid transparent;
+                border-radius: 2rem;
                 text-decoration: none;
-                background-color: white;
-                border: 1px solid tranparent;
-                border-radius: 10px;
-                color:red;
+                background-color: #ffffffad;
+                border: 1px solid rgba(255, 255, 255, 0.71);
+                color: red;
             }
-            & .card_cta:hover{
+
+
+            & .card_cta:hover {
                 border-color: white;
                 background-color: transparent;
-                color: white;
+                color: white !important;
             }
         }
-        & .card:first-child{
-            background-color:darkolivegreen ;
+
+        & .card:first-child {
+            background-image: url(./images/hyundaiSedan.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: hsl(61, 96%, 41%);
+
+            & .card_paragraph {
+                color: hsl(0, 0%, 100%);
+                font-weight: 200;
+                text-shadow: 1px -1px 0 #000000;
+            }
+
+            & .card_cta {
+                color: #69523b;
+            }
         }
-        & .card:nth-child{
-            background-color:darkcyan ;
+
+        & .card:nth-child(2) {
+            background-image: url(./images/suvKia.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: hsl(55, 95%, 33%);
+
+            & .card_title,
+            .card_cta {
+                color: grey;
+            }
+
+            & .card_paragraph {
+                color: hsl(0, 0%, 100%);
+                font-weight: 200;
+                text-shadow: 1px -1px 0 #000000;
+            }
+
+            /* & .card_cta {
+                color: hsl(55, 95%, 33%);
+            } */
         }
-        &.card:last-child{
-            background-color: black;
+
+        & .card:last-child {
+            background-image: url(./images/rols_roysLuxury.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-color: hsl(181, 97%, 24%);
+
+            & .card_title {
+                color: hsl(180, 22%, 92%);
+            }
+
+            & .card_paragraph {
+                color: hsl(0, 0%, 100%);
+                font-weight: 200;
+                text-shadow: 1px -1px 0 #000000;
+            }
+
+            & .card_cta {
+                color: hsl(181, 97%, 24%);
+            }
         }
     }
 }
-.Footer{}
 
-@media screen and (max-widht){
 
+.Footer {}
+
+/* MediaQuery */
+@media screen and (max-width: 375px) {
+    .Body {
+        & .Main {
+            display: inherit;
+            justify-content: inherit;
+
+            & .section {
+                width: auto;
+                flex-direction: column;
+            }
+        }
+    }
 }

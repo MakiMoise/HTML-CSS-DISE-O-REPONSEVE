@@ -1,0 +1,81 @@
+@charset 'UTF-8';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: normal;
+    font-family: "Lexend Deca";
+}
+.Body {
+    max-width: 1400px;
+    margin-inline:auto ;
+    height: 100dvh;
+}
+.Header{}
+.Aside{}
+
+.Main{
+    height: 70%;
+    & .Section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap:0;
+
+        & card{
+            min-width: 250px;
+            max-width: 375px;
+            padding: 2rem;
+
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            gap:2rem;
+
+            color: white;
+
+            & card_title{
+
+            }
+            & .card_paragraph{
+
+            }
+            & .card_cta{
+                padding: 1rem 2rem;
+                text-decoration: none;
+                background-color: white;
+                border: 1px solid tranparent;
+                border-radius: 10px;
+                color:red;
+            }
+            & .card_cta:hover{
+                border-color: white;
+                background-color: transparent;
+                color: white;
+            }
+        }
+        & .card:first-child{
+            background-color:darkolivegreen ;
+        }
+        & .card:nth-child{
+            background-color:darkcyan ;
+        }
+        &.card:last-child{
+            background-color: black;
+        }
+    }
+}
+.Footer{}
+
+@media screen and (max-widht){
+
+}
